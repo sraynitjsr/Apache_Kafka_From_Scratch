@@ -11,3 +11,9 @@
 ######## Consumers: Consumers read and process data from Kafka topics.
 ######## Partitions: Kafka topics can be divided into partitions, which enable parallelism and distribution of data.
 
+### 2. Installation => Follow Office Apache Doc Based on OS Type, Linux Preferred
+
+### 3. Starting Zookeeper:
+
+###### Kafka relies on Apache ZooKeeper for distributed coordination. Start a ZooKeeper server by running the command -> bin/zookeeper-server-start.sh config/zookeeper.properties
+
