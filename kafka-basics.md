@@ -22,3 +22,10 @@
 ###### Start Kafka brokers using the command -> bin/kafka-server-start.sh config/server.properties
 ######## Note => This starts a single Kafka broker. In a production environment, you would typically have multiple brokers for fault tolerance and scalability.
 
+#### 5. Creating a Kafka Topic:
+
+###### We can create a Kafka topic using the kafka-topics.sh script => bin/kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+###### This command creates a topic named "my-topic" with one partition and one replication factor.
+
+
+
