@@ -37,4 +37,8 @@
 ###### Use the Kafka console consumer to read and process data from the topic via => bin/kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092
 ###### This command will display messages from the "my-topic" topic as they are produced.
 
+#### 8. Building a Kafka Producer and Consumer in Code:
 
+###### To build a Kafka producer and consumer in our choosen programming language of like Java, GoLang or others, we will need to use the Kafka client libraries.
+
+###### These libraries provide APIs to interact with Kafka topics and messages.
