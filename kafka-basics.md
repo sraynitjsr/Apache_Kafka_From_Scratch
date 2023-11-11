@@ -27,5 +27,7 @@
 ###### We can create a Kafka topic using the kafka-topics.sh script => bin/kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 ###### This command creates a topic named "my-topic" with one partition and one replication factor.
 
+#### 6. Producing Data:
 
-
+###### We can use the Kafka console producer to publish data to the topic => bin/kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092
+###### We can now type messages, and they will be published to the "my-topic" topic.
