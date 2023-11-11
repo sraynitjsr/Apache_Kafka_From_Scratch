@@ -31,3 +31,10 @@
 
 ###### We can use the Kafka console producer to publish data to the topic => bin/kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092
 ###### We can now type messages, and they will be published to the "my-topic" topic.
+
+#### 7. Consuming Data:
+
+###### Use the Kafka console consumer to read and process data from the topic via => bin/kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092
+###### This command will display messages from the "my-topic" topic as they are produced.
+
+
