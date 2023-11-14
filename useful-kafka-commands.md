@@ -13,3 +13,7 @@
 #### kafka-topics.sh --describe --bootstrap-server <bootstrap_servers> --topic <topic_name>
 ###### Provides information about a specific topic, including partitions, replicas, and configuration.
 
+### 4. Delete a Topic:
+#### kafka-topics.sh --delete --bootstrap-server <bootstrap_servers> --topic <topic_name>
+###### Deletes the specified topic.
+
