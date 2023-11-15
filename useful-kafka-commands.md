@@ -17,3 +17,7 @@
 #### kafka-topics.sh --delete --bootstrap-server <bootstrap_servers> --topic <topic_name>
 ###### Deletes the specified topic.
 
+### 5. Produce Messages:
+#### kafka-console-producer.sh --broker-list <bootstrap_servers> --topic <topic_name>
+###### Allows you to manually produce messages to a topic via the command line.
+
