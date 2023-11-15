@@ -21,3 +21,9 @@
 #### kafka-console-producer.sh --broker-list <bootstrap_servers> --topic <topic_name>
 ###### Allows you to manually produce messages to a topic via the command line.
 
+### 6. Consume Messages:
+#### kafka-console-consumer.sh --bootstrap-server <bootstrap_servers> --topic <topic_name> --from-beginning
+###### Allows you to consume messages from a topic via the command line.
+
+
+
