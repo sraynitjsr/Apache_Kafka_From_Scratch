@@ -29,3 +29,6 @@
 #### kafka-configs.sh --bootstrap-server <bootstrap_servers> --entity-type topics --entity-name <topic_name> --alter --add-config <config_key>=<config_value>
 ###### Modifies the configuration of a topic.
 
+### 8. Alter the Number of Partitions:
+#### kafka-topics.sh --alter --bootstrap-server localhost:9092 --topic my_topic --partitions 5
+###### This command allows us to change the number of partitions for a topic. 
