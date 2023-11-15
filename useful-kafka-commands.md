@@ -25,5 +25,7 @@
 #### kafka-console-consumer.sh --bootstrap-server <bootstrap_servers> --topic <topic_name> --from-beginning
 ###### Allows you to consume messages from a topic via the command line.
 
-
+### 7. Alter Topic Configuration:
+#### kafka-configs.sh --bootstrap-server <bootstrap_servers> --entity-type topics --entity-name <topic_name> --alter --add-config <config_key>=<config_value>
+###### Modifies the configuration of a topic.
 
