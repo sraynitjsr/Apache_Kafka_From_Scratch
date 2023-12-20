@@ -2,7 +2,6 @@ from confluent_kafka import Producer
 import json
 
 bootstrap_servers = 'localhost:9092'
-
 kafka_topic = 'my_kafka_topic'
 
 producer_config = {
@@ -12,23 +11,24 @@ producer_config = {
 
 producer = Producer(producer_config)
 
-def produce_message(message):
-    try:       
-        producer.produce(kafka_topic, key=None, value=json.dumps(message))
-
+def produce_messages(messages):
+    try:
+        for message in messages:
+            producer.produce(kafka_topic, key=None, value=json.dumps(message))
         producer.flush()
-
-        print(f"Produced message: {message}")
-
+        print(f"Produced messages: {messages}")
     except Exception as e:
-        print(f"Error producing message: {e}")
+        print(f"Error producing messages: {e}")
 
-sample_data = [
-    {'id': 1, 'name': 'John Doe'},
-    {'id': 2, 'name': 'Jane Smith'},
+bulk_data = [
+    {'id': 1, 'name': 'Schin'},
+    {'id': 2, 'name': 'Virat'},
 ]
 
-for data_point in sample_data:
-    produce_message(data_point)
+batch_size = 3
+
+for i in range(0, len(bulk_data), batch_size):
+    batch = bulk_data[i:i + batch_size]
+    produce_messages(batch)
 
 producer.close()
