@@ -36,3 +36,7 @@
 ### 9. Change Replication Factor While Altering:
 #### kafka-topics.sh --alter --bootstrap-server localhost:9092 --topic my_topic --partitions 5 --replication-factor 3
 ###### This example not only changes the number of partitions to 5 but also sets the replication factor to 3.
+
+### 10. Add Partitions Without Specifying Count:
+#### kafka-topics.sh --alter --bootstrap-server localhost:9092 --topic my_topic --partitions 10
+###### This alters the number of partitions to 10 without specifying the replication factor, in which case the existing replication factor is retained.
