@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: kafka
+spec:
+  serviceName: "kafka"
+  replicas: {{ .Values.statefulset.replicas }}
+  selector:
+    matchLabels:
+      app: kafka
+  template:
+    metadata:
+      labels:
+        app: kafka
+    spec:
+      containers:
+      - name: kafka
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 9092
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/kafka/data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: kafka-pvc
+  volumeClaimTemplates:
+  - metadata:
+      name: kafka-pvc
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: {{ .Values.statefulset.storage.size }}
+  resources:
+    requests:
+      memory: {{ .Values.statefulset.resources.requests.memory }}
+      cpu: {{ .Values.statefulset.resources.requests.cpu }}
+    limits:
+      memory: {{ .Values.statefulset.resources.limits.memory }}
+      cpu: {{ .Values.statefulset.resources.limits.cpu }}
