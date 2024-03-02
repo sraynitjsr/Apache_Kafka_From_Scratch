@@ -1,0 +1,21 @@
+image:
+  repository: confluentinc/cp-kafka
+  tag: 7.4.1
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 9092
+  nodePort: 30092
+
+statefulset:
+  replicas: 3
+  storage:
+    size: 10Gi
+  resources:
+    requests:
+      memory: "1Gi"
+      cpu: "0.5"
+    limits:
+      memory: "2Gi"
+      cpu: "1"
