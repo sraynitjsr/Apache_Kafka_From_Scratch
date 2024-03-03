@@ -18,6 +18,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: 9092
+        env:
+        - name: KAFKA_ZOOKEEPER_CONNECT
+          value: "{{ .Values.zookeeper.host }}:{{ .Values.zookeeper.port }}"
         volumeMounts:
         - name: data
           mountPath: /var/lib/kafka/data
