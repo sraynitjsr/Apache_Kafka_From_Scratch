@@ -19,3 +19,8 @@ statefulset:
     limits:
       memory: "2Gi"
       cpu: "1"
+
+zookeeper:
+  enabled: false
+  host: zookeeper
+  port: 2181
