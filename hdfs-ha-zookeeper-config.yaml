@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: hdfs-namenode
+spec:
+  serviceName: "hdfs-namenode"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hdfs-namenode
+  template:
+    metadata:
+      labels:
+        app: hdfs-namenode
+    spec:
+      containers:
+      - name: namenode
+        image: hdfs-namenode:latest
+        ports:
+        - containerPort: 8020
+        - containerPort: 50070
+        readinessProbe:
+          exec:
+            command: ["curl", "-f", "http://localhost:50070"]
+          initialDelaySeconds: 10
+          periodSeconds: 10
